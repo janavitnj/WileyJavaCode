@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util
+		https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<context:annotation-config />
+	<util:list list-class="java.util.LinkedList" id="mf">
+		<value>janavi</value>
+		<value>partha</value>
+	</util:list>
+	
+	<util:map map-class="java.util.HashMap" id="courses">
+		<entry key="Sping" value="90"/>
+	</util:map>
+
+	<bean class="com.wiley.Sprincore.Annotation.Address"
+		name="address">
+		<property name="city" value="benglur" />
+		<property name="phone">
+			<set>
+				<value>9192</value>
+				<value>9876</value>
+			</set>
+
+		</property>
+	</bean>
+
+	<bean class="com.wiley.Sprincore.Annotation.Employee"
+		name="emp1">
+		<property name="friends" ref="mf" />
+		<property name="course" ref="courses"/>
+
+	</bean>
+
+
+</beans>
